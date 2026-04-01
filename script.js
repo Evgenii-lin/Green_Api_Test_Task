@@ -21,7 +21,6 @@ function getSettingsEvent() {
     .then(response => response.json())
     .then(data => {
       answer = JSON.stringify(data);
-      console.log(data);
       $('#answerMessage').val(answer);
     })
     .catch(error => console.error(error));
@@ -37,7 +36,6 @@ function getStateInstanceEvent() {
     .then(response => response.json())
     .then(data => {
       answer = JSON.stringify(data);
-      console.log(data);
       $('#answerMessage').val(answer);
     })
     .catch(error => console.error(error));
@@ -55,7 +53,6 @@ async function sendMessageEvent() {
     const data = {}
     data["chatId"] = numberForMessage + "@c.us";
     data["message"] = textMessage;
-    console.log(data);
     
     try {
       const response = await fetch(url, {
@@ -90,7 +87,7 @@ async function sendFileByUrlEvent() {
     data["chatId"] = numberFileByUrl + "@c.us";
     data["urlFile"] = fileByUrl;
     data["fileName"] = nameFileByUrl;
-    console.log(data);
+
 
     try {
       const response = await fetch(url, {
